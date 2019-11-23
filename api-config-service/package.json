@@ -1,0 +1,34 @@
+{
+  "name": "longarai",
+  "version": "1.0.0",
+  "description": "REST API with Node.js, Express and MongoDB.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hellofreshdevtests/mlongarai-devops-test.git"
+  },
+  "main": "app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "start:dev": "nodemon src/app.js",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "http-status-codes": "^1.4.0",
+    "mocha": "6.2.2",
+    "mongoose": "5.7.12",
+    "mongoose-hidden": "1.8.1"
+  },
+  "devDependencies": {
+    "jest": "24.9.0",
+    "nodemon": "1.19.4",
+    "supertest": "4.0.2"
+  }
+}

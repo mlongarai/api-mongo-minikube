@@ -1,0 +1,86 @@
+{
+    "apiVersion": "apps/v1",
+    "kind": "Deployment",
+    "metadata": {
+        "name": "config-service",
+        "labels": {
+            "version": "v1",
+            "app": "config-service"
+        }
+    },
+    "spec": {
+        "replicas": 2, 
+        "strategy": {
+            "type": "RollingUpdate",
+            "rollingUpdate": {
+                "maxSurge": 10,
+                "maxUnavailable": 0
+            }
+        },
+        "minReadySeconds": 5,
+        "selector": {
+            "matchLabels": {
+                "version": "v1",
+                "app": "config-service"
+            }
+        },
+        "template": {
+            "metadata": {
+                "labels": {
+                    "version": "v1",
+                    "app": "config-service"
+                }
+            },
+            "spec": {
+                "containers": [
+                    {
+                        "name": "config-service",
+                        "image": "api-config-service",
+                        "imagePullPolicy": "IfNotPresent",
+                        "readinessProbe": {
+                            "httpGet": {
+                                "path": "/configs",
+                                "port": 80
+                            },
+                            "initialDelaySeconds": 15,
+                            "timeoutSeconds": 1
+                        },
+                        "livenessProbe": {
+                            "httpGet": {
+                                "path": "/configs",
+                                "port": 80
+                            },
+                            "initialDelaySeconds": 15,
+                            "timeoutSeconds": 1
+                        },
+                        "resources": {
+                            "limits": {
+                                "cpu": "200m",
+                                "memory": "200Mi"
+                            }
+                        },
+                        "ports": [
+                            {
+                                "containerPort": 80
+                            }
+                        ],
+                        "env": [
+                            {
+                                "name": "MONGO_URL",
+                                "value": "mongo"
+                            },
+                            {
+                                "name": "MONGO_PORT",
+                                "value": "27017"
+                            },
+                            {
+                                "name": "PORT",
+                                "value": "80"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

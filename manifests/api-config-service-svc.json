@@ -1,0 +1,24 @@
+{
+    "kind": "Service",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "config-service",
+        "labels": {
+            "version": "v1",
+            "app": "config-service"
+        }
+    },
+    "spec": {
+        "selector": {
+            "app": "config-service"
+        },
+        "type": "LoadBalancer",
+        "ports": [
+            {
+                "protocol": "TCP",
+                "port": 80,
+                "targetPort": 80
+            }
+        ]
+    }
+}

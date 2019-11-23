@@ -1,0 +1,32 @@
+{
+    "apiVersion": "extensions/v1beta1",
+    "kind": "Ingress",
+    "metadata": {
+        "name": "ingress-api",
+        "annotations": {
+            "nginx.ingress.kubernetes.io/rewrite-target": "/"
+        }
+    },
+    "spec": {
+        "backend": {
+            "serviceName": "config-service",
+            "servicePort": 80
+        },
+        "rules": [
+            {
+                "host": "config-service",
+                "http": {
+                    "paths": [
+                        {
+                            "path": "/",
+                            "backend": {
+                                "serviceName": "config-service",
+                                "servicePort": 80
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}
