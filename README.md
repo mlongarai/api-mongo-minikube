@@ -57,6 +57,8 @@ Note: Please make sure dns 'config-service' is not fixed for any IP on /etc/host
 - [Dotenv](https://github.com/motdotla/dotenv)
 - [http-status-codes](https://github.com/prettymuchbryce/http-status-codes)
 - [jest](https://github.com/facebook/jest)
+- [supertest](https://github.com/visionmedia/supertest)
+- [mongodb-memory-server](https://github.com/nodkz/mongodb-memory-server)
 
 ### Endpoints
 
@@ -80,6 +82,18 @@ Following are the endpoints implemented and your respective controller:
   - **mongo-statefulset.json**: StatefulSet to provide a deployment and scaling of a set of Pods, and provides guarantees about the ordering and uniqueness of these Pods.
   - **mongo-storage.json**: StorageClass to provide a stable and persistent storage for our database.
 
+### Test coverage with Jest
+
+To validate the API using jest, simply go to the api-config-service folder and run the command:
+
+``` bash
+npm run test
+```
+
+Coverage:
+
+![coverage](./docs/api-config-service-coverage.png)
+
 ## Directory structure
 
 ```sh
@@ -88,7 +102,7 @@ Following are the endpoints implemented and your respective controller:
 ├── manifests # manifests files to deploy k8s cluster
 ├── scripts # application scripts (e.g deploy.sh teardown.sh)
 └── api-config-service
-    ├── tests # unit/integration tests using jest
+    ├── jest # unit/integration tests using jest
     └── src
         ├── controllers #Defines our business logic
         ├── models # Database models schema

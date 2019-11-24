@@ -10,16 +10,14 @@ class ConfigController {
       res.status(statusCode.INTERNAL_SERVER_ERROR).json(err);
     }
   }
-
   async createConfig(req, res) {
     try {
       const data = await model.create(req.body);
       res.status(statusCode.CREATED).json(data);
     } catch (err) {
-      res.status(statuscode.internal_server_error).json(err);
+      res.status(statuscode.INTERNAL_SERVER_ERROR).json(err);
     }
   }
-
   async getConfigByName(req, res) {
     try {
       const { name } = req.params;
@@ -29,7 +27,6 @@ class ConfigController {
       res.status(statusCode.INTERNAL_SERVER_ERROR).send(err);
     }
   }
-
   async updateConfig(req, res) {
     try {
       const data = await model.findOneAndUpdate(req.params.name, req.body, {
@@ -40,7 +37,6 @@ class ConfigController {
       res.status(statusCode.INTERNAL_SERVER_ERROR).json(err);
     }
   }
-
   async deleteConfig(req, res) {
     try {
       const data = await model.findOneAndDelete(req.params.name);
@@ -49,7 +45,6 @@ class ConfigController {
       res.status(statusCode.INTERNAL_SERVER_ERROR).json(err);
     }
   }
-
   async searchConfigs(req, res) {
     try {
       const data = await model.find(req.query);
@@ -59,5 +54,4 @@ class ConfigController {
     }
   }
 }
-
 module.exports = new ConfigController();

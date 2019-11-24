@@ -3,7 +3,10 @@ logs
 *.log
 
 # Dependency directories
+api-config-service/node_modules/
+api-config-service/coverage/
 node_modules/
+coverage/
 
 # Optional npm cache directory
 .npm
@@ -20,3 +23,4 @@ package-lock.json
 .DS_Store
 DS_Store
 **/.DS_Store
+../.DS_Store
