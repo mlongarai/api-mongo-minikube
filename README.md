@@ -1,6 +1,6 @@
 # A Kubernetes cluster managing a REST API with Node.js, Express and MongoDB.
 
-Web API implementation (DevOps Test).
+Web API implementation.
 Could be improved in many ways: CI, automated performance tests & more.
 
 ![demo](https://user-images.githubusercontent.com/8631127/69464659-a6d02580-0d5d-11ea-8ab8-4d95bcf33b63.gif)
