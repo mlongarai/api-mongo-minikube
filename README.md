@@ -1,4 +1,4 @@
-# A Kubernetes cluster managing a REST API with Node.js, Express and MongoDB.
+# A Playground Kubernetes cluster managing a REST API with Node.js, Express and MongoDB.
 
 Web API implementation.
 Could be improved in many ways: CI, automated performance tests & more.
