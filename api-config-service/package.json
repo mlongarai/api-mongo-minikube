@@ -4,7 +4,7 @@
   "description": "REST API with Node.js, Express and MongoDB.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hellofreshdevtests/mlongarai-devops-test.git"
+    "url": "https://github.com/mlongarai/api-mongo-minikube.git"
   },
   "main": "app.js",
   "scripts": {
